@@ -83,7 +83,7 @@ class Monitoring:
             for err_data in error_list:
                 message = f"{err_data.strip()}"
                 self._log_and_print(message)
-            message = f"Total Matches: {len(error_list)}"
+            message = f"Total Matches: {len(error_list)}\n"
             self._log_and_print(message)
 
             message = "Keyword searched: FAILED"
@@ -91,7 +91,7 @@ class Monitoring:
             for err_data in failed_list:
                 message = f"{err_data.strip()}"
                 self._log_and_print(message)
-            message = f"Total Matches: {len(failed_list)}"
+            message = f"Total Matches: {len(failed_list)}\n"
             self._log_and_print(message)
 
             message = "Keyword searched: CRITICAL"
@@ -99,7 +99,7 @@ class Monitoring:
             for err_data in critical_list:
                 message = f"{err_data.strip()}"
                 self._log_and_print(message)
-            message = f"Total Matches: {len(critical_list)}"
+            message = f"Total Matches: {len(critical_list)}\n"
             self._log_and_print(message)
 
     def api_health_check(self, api_url):
