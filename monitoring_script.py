@@ -13,7 +13,7 @@ class Monitoring:
 
     def disk_usage(self):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        cmd = ["ssh", "saahithi@macbookpro", "df -h | awk '$9 ~ /^\/System/ {print $5, $9}'"]
+        cmd = ["ssh", "your_username@your_server", "df -h | awk '$9 ~ /^\/System/ {print $5, $9}'"]
         result = subprocess.run(cmd, capture_output=True, text=True)
         message = f"\n{timestamp}: DISK USAGE"
         self._log_and_print(message)
@@ -38,7 +38,7 @@ class Monitoring:
 
     def service_status(self, service):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        cmd = ["ssh", "saahithi@macbookpro", f"ps aux | grep {service} | grep -v grep| wc -l"]
+        cmd = ["ssh", "your_username@your_server", f"ps aux | grep {service} | grep -v grep| wc -l"]
         result = subprocess.run(cmd, capture_output=True, text=True)
         message = f"\n{timestamp}: SERVICE STATUS"
         self._log_and_print(message)
