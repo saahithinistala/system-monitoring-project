@@ -1,0 +1,15 @@
+2026-04-23 09:10:15 INFO Application started successfully
+2026-04-23 09:12:03 INFO Database connection established
+2026-04-23 09:14:27 WARNING Disk usage reached 78% on /System/Volumes/Data
+2026-04-23 09:16:42 INFO Scheduled backup started
+2026-04-23 09:18:11 ERROR Failed to connect to payment service
+2026-04-23 09:19:55 INFO Retry initiated for payment service
+2026-04-23 09:21:08 CRITICAL Database connection timeout exceeded
+2026-04-23 09:23:44 INFO User login successful
+2026-04-23 09:25:17 FAILED Jenkins deployment failed for build #245
+2026-04-23 09:27:30 INFO Health check completed successfully
+2026-04-23 09:29:14 ERROR API response returned status code 500
+2026-04-23 09:31:50 WARNING Memory usage reached 82%
+2026-04-23 09:33:12 INFO Log rotation completed
+2026-04-23 09:35:46 CRITICAL Service nginx is not responding
+2026-04-23 09:37:20 INFO Incident ticket created automatically
