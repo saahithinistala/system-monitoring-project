@@ -13,7 +13,7 @@ class Monitoring:
 
     def disk_usage(self):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        cmd = ["ssh", "your_username@your_server", "df -h | awk '$9 ~ /^\/System/ {print $5, $9}'"]
+        cmd = ["ssh", "saahithi@macbookpro", "df -h | awk '$9 ~ /^\/System/ {print $5, $9}'"]
         result = subprocess.run(cmd, capture_output=True, text=True)
         message = f"\n{timestamp}: DISK USAGE"
         self._log_and_print(message)
@@ -38,7 +38,7 @@ class Monitoring:
 
     def service_status(self, service):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        cmd = ["ssh", "your_username@your_server", f"ps aux | grep {service} | grep -v grep| wc -l"]
+        cmd = ["ssh", "saahithi@macbookpro", f"ps aux | grep {service} | grep -v grep| wc -l"]
         result = subprocess.run(cmd, capture_output=True, text=True)
         message = f"\n{timestamp}: SERVICE STATUS"
         self._log_and_print(message)
@@ -117,13 +117,13 @@ class Monitoring:
         try:
             result = requests.get(api_url, timeout=5)
             if 200 <= result.status_code < 300:
-                message = f"API Health: Healthy\nStatus Code: {result.status_code}\nStatus: Reachable"
+                message = f"URL: {api_url}\nAPI Health: Healthy\nStatus Code: {result.status_code}\nStatus: Reachable"
             elif result.status_code >= 400:
-                message = f"API Health: Unhealthy\nStatus Code: {result.status_code}\nStatus: Reachable"
+                message = f"URL: {api_url}\nAPI Health: Unhealthy\nStatus Code: {result.status_code}\nStatus: Reachable"
             elif 300 <= result.status_code < 400:
-                message = f"WARNING!!\nAPI Health: Unhealthy\nStatus Code: {result.status_code}\nStatus: Reachable"
+                message = f"URL: {api_url}\nWARNING!!\nAPI Health: Unhealthy\nStatus Code: {result.status_code}\nStatus: Reachable"
             else:
-                message = f"API Health: Unhealthy\nStatus Code: {result.status_code}\nStatus: Reachable"
+                message = f"URL: {api_url}\nAPI Health: Unhealthy\nStatus Code: {result.status_code}\nStatus: Reachable"
 
             self._log_and_print(message)
 
@@ -133,6 +133,6 @@ class Monitoring:
                 if error in str(url_exception):
                     reason = error_reason
                     break
-            message = f"API Health: Unhealthy\nReason: {reason}\nStatus: Not Reachable"
+            message = f"URL: {api_url}\nAPI Health: Unhealthy\nReason: {reason}\nStatus: Not Reachable"
             self._log_and_print(message)
 

@@ -1,0 +1,36 @@
+2026-04-24 06:25:43: Log file -> logs/system_health_check_py.log has been created
+
+2026-04-24 06:25:45: DISK USAGE
+/System/Volumes/Preboot: 1% -> Normal
+/System/Volumes/VM: 1% -> Normal
+/System/Volumes/Update: 1% -> Normal
+/System/Volumes/Data: 45% -> Normal
+
+2026-04-24 06:26:04: SERVICE STATUS
+nginx -> RUNNING
+
+2026-04-24 06:26:18: LOG ERROR DETECTION
+Source log file: application.log
+Keyword searched: ERROR
+2026-04-23 09:18:11 ERROR Failed to connect to payment service
+2026-04-23 09:29:14 ERROR API response returned status code 500
+Total Matches: 2
+Keyword searched: FAILED
+2026-04-23 09:25:17 FAILED Jenkins deployment failed for build #245
+Total Matches: 1
+Keyword searched: CRITICAL
+2026-04-23 09:21:08 CRITICAL Database connection timeout exceeded
+2026-04-23 09:35:46 CRITICAL Service nginx is not responding
+Total Matches: 2
+
+2026-04-24 06:26:35: API HEALTH CHECK
+URL: https://api.github.com
+API Health: Healthy
+Status Code: 200
+Status: Reachable
+
+2026-04-24 06:26:59: API HEALTH CHECK
+URL: https://this-domain-does-not-exist-12345.com
+API Health: Unhealthy
+Reason: DNS Failure
+Status: Not Reachable
